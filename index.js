@@ -72,13 +72,7 @@ arrOfCells[1][1].innerHTML = '/';
 arrOfCells[0][1].setAttribute('id', 'equal');
 arrOfCells[0][1].setAttribute('onclick', 'calculate()');
 arrOfCells[0][1].innerHTML = '=';
-arrOfCells[0][0].setAttribute('id', 'point');
-arrOfCells[0][0].setAttribute('onclick', 'point()');
-arrOfCells[0][0].innerHTML = '.';
-
-function point() {
-  document.getElementById('textarea').value += '.';
-}
+arrOfCells[0][0].parentNode.removeChild(arrOfCells[0][0]);
 
 function Command(ourCommand) {
   command = ourCommand.id;
@@ -92,29 +86,14 @@ function showNum(ourCell) {
   swOfClear = false;
   if (switcher == true) {
     var value =  parseInt(ourCell.id, 10);
-    if (document.getElementById('textarea').value.indexOf('.', 0) > -1) {
-      for (var i = 0; i < counterOfDecimals; i++) {
-      value = value / 10;
-      }
-    input1Row = input1Row + value;
-    input1Row.toFixed(counterOfDecimals);
-    counterOfDecimals++;
-    }
-    else {input1Row = input1Row * 10 + value};
+    input1Row = input1Row * 10 + value;
     console.log(input1Row);
     document.getElementById('textarea').value = input1Row;
 
   }
   else {
     var value = parseInt(ourCell.id, 10);
-    if (document.getElementById('textarea').value.split('\n')[1].indexOf('.', 0) > -1) {
-      for (var i = 0; i < counterOfDecimals; i++) {
-      value = value / 10;
-      }
-    input2Row = input2Row + value;
-    counterOfDecimals++;
-    }
-    else {input2Row = input2Row * 10 + value};
+    input2Row = input2Row * 10 + value;
     console.log(input2Row);
     document.getElementById('textarea').value = ourValue + input2Row;
   }
