@@ -7,7 +7,6 @@ var command = '';
 var switcher = true;
 var swOfClear = true;
 var ourValue, a, b, count, result, operandArea;
-var counterOfDecimals = 1;
 
 (function createNumbers() {
 	count = 13;

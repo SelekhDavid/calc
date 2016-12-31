@@ -1,3 +1,21 @@
 .main {
 	margin: 5%;
 }
+.pta, .command {
+	display: inline-block;
+}
+.command {
+	position: absolute;
+	left: 4%;
+	top: 15%;
+}
+.pta {
+	padding-top: 5%;
+}
+.nums, .options {
+	display: inline-block;
+	font-size: 25px;
+}
+td {
+	text-align: center;
+}
